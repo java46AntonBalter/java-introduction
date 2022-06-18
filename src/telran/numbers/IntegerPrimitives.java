@@ -86,7 +86,7 @@ public class IntegerPrimitives {
 
 	private static int getLength(long x) {
 		double bin = Long.toBinaryString(x).length();
-		return (int) Math.ceil(bin / 8); 
+		return (int) Math.ceil(bin / 8);
 	}
 
 }
