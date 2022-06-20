@@ -16,7 +16,7 @@ public class IntegerPrimitives {
 	}
 
 	public static int getLengthByte() {
-		return (int) (getLength(getMaxByte()));
+		return getLength(getMaxByte());
 	}
 
 	public static char getMaxChar() {
@@ -33,7 +33,7 @@ public class IntegerPrimitives {
 	}
 
 	public static int getLengthChar() {
-		return (int) getLength(getMaxChar());
+		return getLength(getMaxChar());
 	}
 
 	public static short getMaxShort() {
@@ -49,15 +49,15 @@ public class IntegerPrimitives {
 	}
 
 	public static int getLengthShort() {
-		return (int) (getLength(getMaxShort()));
+		return getLength(getMaxShort());
 	}
 
 	public static int getMaxInt() {
 		int res = 1;
 		while (res > 0) {
-			res = (int) (res * 2);
+			res = res * 2;
 		}
-		return (int) (res - 1);
+		return res - 1;
 	}
 
 	public static int getMinInt() {
@@ -65,7 +65,7 @@ public class IntegerPrimitives {
 	}
 
 	public static int getLengthInt() {
-		return (int) (getLength(getMaxInt()));
+		return getLength(getMaxInt());
 	}
 
 	public static long getMaxLong() {
@@ -81,12 +81,17 @@ public class IntegerPrimitives {
 	}
 
 	public static int getLengthLong() {
-		return (int) (getLength(getMaxLong()));
+		return getLength(getMaxLong());
 	}
 
 	private static int getLength(long x) {
-		double bin = Long.toBinaryString(x).length();
-		return (int) Math.ceil(bin / 8);
+		long value = 1;
+		int count = 1;
+		while(value < x && value > 0) {
+			value *= 2;
+			count++;
+		}
+		return count / 8;
 	}
 
 }

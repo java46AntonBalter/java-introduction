@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import telran.numbers.IntegerPrimitives;
 
-class IntegerPrimitivesTests {
+class IntegerPrimitivesTest {
 
 	@Test
 	void getMaxByte() {
