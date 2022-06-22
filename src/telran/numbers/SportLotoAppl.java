@@ -8,7 +8,7 @@ public class SportLotoAppl {
 		int res[] = new int[7];
 		for (int i = 0; i < res.length; i++) {
 			res[i] = getRandomNumber(1, 49);
-			while (ArrayInt.indexOf(res, res[i]) > 0) {
+			while (ArrayInt.indexOf(res, res[i]) < 0) {
 				res[i] = getRandomNumber(1, 49);
 			}
 		}
