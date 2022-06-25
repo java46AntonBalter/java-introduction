@@ -75,9 +75,9 @@ public class ArrayInt {
 		int middle = ar.length / 2;
 		while (left <= right && ar[middle] != number) {
 			if (ar[middle] < number) {
-				left = middle + 1; // looking for the number will be in right part of the array
+				left = middle + 1;
 			} else {
-				right = middle - 1; // looking for the number will be in the left part of the array
+				right = middle - 1;
 			}
 			middle = (left + right) / 2;
 		}
@@ -90,8 +90,5 @@ public class ArrayInt {
 		}
 
 		return res;
-		// TODO
-		// fix the code for performing the method in accordance with the above
-		// definition (see the tests)
 	}
 }
