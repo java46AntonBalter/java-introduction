@@ -11,10 +11,7 @@ public class TictactoeGame {
 			if (matrix.length != matrix[i].length)
 				return -1;
 		}
-		return (checkGameOver(matrix) > 0)
-				? ((checkWinRow(matrix) == 1 || checkWinCollumn(matrix) == 1 || checkWinDiagonal1(matrix) == 1
-						|| checkWinDiagonal2(matrix) == 1) ? 1 : 3)
-				: 0;
+		return (checkGameOver(matrix) == 0 && checkWin(matrix) == 3) ? 0 : checkWin(matrix);
 	}
 
 	public static int checkGameOver(char[][] matrix) {
@@ -26,6 +23,11 @@ public class TictactoeGame {
 			}
 		}
 		return 1;
+	}
+
+	public static int checkWin(char[][] matrix) {
+		return (checkWinRow(matrix) == 1 || checkWinCollumn(matrix) == 1 || checkWinDiagonal1(matrix) == 1
+				|| checkWinDiagonal2(matrix) == 1) ? 1 : 3;
 	}
 
 	public static int checkWinRow(char[][] matrix) {

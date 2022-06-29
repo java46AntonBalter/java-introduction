@@ -20,7 +20,7 @@ class TictactoeGameTest {
 		
 		//check game not over 
 		char[][] matrix1 = {
-				{'a','a','a'},
+				{'a','b','c'},
 				{'0','x','0'},
 				{'1','x','0'}
 		};
