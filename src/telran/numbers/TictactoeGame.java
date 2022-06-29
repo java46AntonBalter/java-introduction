@@ -2,6 +2,10 @@ package telran.numbers;
 
 public class TictactoeGame {
 	public static int tictactoeMove(char matrix[][], int nRow, int nCol, char symb) {
+		for (int i = 0; i < matrix.length; i++) {
+	        if(matrix.length != matrix[i].length)
+	            return -1;
+	    }
 		matrix[nRow][nCol] = symb;
 		return checkStatus(matrix);
 	}
