@@ -8,11 +8,12 @@ public class TictactoeGame {
 
 	public static int checkStatus(char[][] matrix) {
 		for (int i = 0; i < matrix.length; i++) {
-	        if(matrix.length != matrix[i].length)
-	            return -1;
-	    }
+			if (matrix.length != matrix[i].length)
+				return -1;
+		}
 		return (checkGameOver(matrix) > 0)
-				? ((checkWinRow(matrix) == 1 || checkWinCollumn(matrix) == 1 || checkWinDiagonal1(matrix) == 1 || checkWinDiagonal2(matrix) == 1) ? 1 : 3)
+				? ((checkWinRow(matrix) == 1 || checkWinCollumn(matrix) == 1 || checkWinDiagonal1(matrix) == 1
+						|| checkWinDiagonal2(matrix) == 1) ? 1 : 3)
 				: 0;
 	}
 
@@ -28,9 +29,8 @@ public class TictactoeGame {
 	}
 
 	public static int checkWinRow(char[][] matrix) {
-		int countMatch = 0;
 		for (int i = 0; i < matrix[0].length; i++) {
-			countMatch = 0;
+			int countMatch = 0;
 			for (int j = 0; j < matrix[0].length; j++) {
 				if (matrix[i][j] == matrix[i][0]) {
 					++countMatch;
@@ -44,9 +44,8 @@ public class TictactoeGame {
 	}
 
 	public static int checkWinCollumn(char[][] matrix) {
-		int countMatch = 0;
 		for (int i = 0; i < matrix[0].length; i++) {
-			countMatch = 0;
+			int countMatch = 0;
 			for (int j = 0; j < matrix[0].length; j++) {
 				if (matrix[j][i] == matrix[0][i]) {
 					++countMatch;
@@ -62,7 +61,7 @@ public class TictactoeGame {
 	public static int checkWinDiagonal1(char[][] matrix) {
 		int countMatch = 0;
 		for (int i = 0, j = 0; i < matrix[0].length - 1; i++, j++) {
-			
+
 			if (matrix[i][j] == matrix[i + 1][j + 1]) {
 				++countMatch;
 			}
