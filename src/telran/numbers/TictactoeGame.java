@@ -21,8 +21,8 @@ public class TictactoeGame {
 	}
 
 	public static int checkGameOver(char[][] matrix) {
-		for (int i = 0; i < matrix[0].length; i++) {
-			for (int j = 0; j < matrix[0].length; j++) {
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix.length; j++) {
 				if (matrix[i][j] != 'x' && matrix[i][j] != '0') {
 					return 0;
 				}
@@ -37,14 +37,14 @@ public class TictactoeGame {
 	}
 
 	public static int checkWinRow(char[][] matrix) {
-		for (int i = 0; i < matrix[0].length; i++) {
+		for (int i = 0; i < matrix.length; i++) {
 			int countMatch = 0;
-			for (int j = 0; j < matrix[0].length; j++) {
+			for (int j = 0; j < matrix.length; j++) {
 				if (matrix[i][j] == matrix[i][0]) {
 					++countMatch;
 				}
 			}
-			if (countMatch == matrix[i].length) {
+			if (countMatch == matrix.length) {
 				return 1;
 			}
 		}
@@ -52,14 +52,14 @@ public class TictactoeGame {
 	}
 
 	public static int checkWinCollumn(char[][] matrix) {
-		for (int i = 0; i < matrix[0].length; i++) {
+		for (int i = 0; i < matrix.length; i++) {
 			int countMatch = 0;
-			for (int j = 0; j < matrix[0].length; j++) {
+			for (int j = 0; j < matrix.length; j++) {
 				if (matrix[j][i] == matrix[0][i]) {
 					++countMatch;
 				}
 			}
-			if (countMatch == matrix[i].length) {
+			if (countMatch == matrix.length) {
 				return 1;
 			}
 		}
@@ -68,7 +68,7 @@ public class TictactoeGame {
 
 	public static int checkWinDiagonal1(char[][] matrix) {
 		int countMatch = 0;
-		for (int i = 0, j = 0; i < matrix[0].length - 1; i++, j++) {
+		for (int i = 0, j = 0; i < matrix.length - 1; i++, j++) {
 
 			if (matrix[i][j] == matrix[i + 1][j + 1]) {
 				++countMatch;
@@ -79,11 +79,11 @@ public class TictactoeGame {
 
 	public static int checkWinDiagonal2(char[][] matrix) {
 		int countMatch = 0;
-		for (int i = matrix[0].length - 1, j = 0; j < matrix[0].length - 1; i--, j++) {
+		for (int i = matrix.length - 1, j = 0; j < matrix.length - 1; i--, j++) {
 			if (matrix[i][j] == matrix[i - 1][j + 1]) {
 				++countMatch;
 			}
 		}
-		return (countMatch == matrix[0].length - 1) ? 1 : 3;
+		return (countMatch == matrix.length - 1) ? 1 : 3;
 	}
 }
