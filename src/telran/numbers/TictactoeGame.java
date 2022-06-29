@@ -7,11 +7,17 @@ public class TictactoeGame {
 	}
 
 	public static int checkStatus(char[][] matrix) {
+		
+		return checkifSquare(matrix) == 0 ? 
+			((checkGameOver(matrix) == 0 && checkWin(matrix) == 3) ? 0 : checkWin(matrix)) : -1 ;
+	}
+	
+	public static int checkifSquare(char[][] matrix) {
 		for (int i = 0; i < matrix.length; i++) {
 			if (matrix.length != matrix[i].length)
 				return -1;
 		}
-		return (checkGameOver(matrix) == 0 && checkWin(matrix) == 3) ? 0 : checkWin(matrix);
+		return 0;
 	}
 
 	public static int checkGameOver(char[][] matrix) {

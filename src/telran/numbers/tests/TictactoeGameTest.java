@@ -12,7 +12,7 @@ class TictactoeGameTest {
 	void tictactoeMoveTest() {
 		//check if matrix is square
 		char[][] matrix = {
-				{'a','a','a'},
+				{'a','b','c'},
 				{'0','x'},
 				{'1','x','0'}
 		};
