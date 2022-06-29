@@ -2,15 +2,15 @@ package telran.numbers;
 
 public class TictactoeGame {
 	public static int tictactoeMove(char matrix[][], int nRow, int nCol, char symb) {
-		for (int i = 0; i < matrix.length; i++) {
-	        if(matrix.length != matrix[i].length)
-	            return -1;
-	    }
 		matrix[nRow][nCol] = symb;
 		return checkStatus(matrix);
 	}
 
 	public static int checkStatus(char[][] matrix) {
+		for (int i = 0; i < matrix.length; i++) {
+	        if(matrix.length != matrix[i].length)
+	            return -1;
+	    }
 		return (checkGameOver(matrix) > 0)
 				? ((checkWinRow(matrix) == 1 || checkWinCollumn(matrix) == 1 || checkWinDiagonal1(matrix) == 1 || checkWinDiagonal2(matrix) == 1) ? 1 : 3)
 				: 0;
