@@ -32,10 +32,13 @@ class StringsClassTests {
 		String str2 = "Helll";
 		String str3 = "eloHl";
 		String str4 = "Helo";
+		String str5 = "astronomer";
+		String str6 = "moonstarer";
 		assertTrue(Strings.isAnagram(str1, str3));
 		assertFalse(Strings.isAnagram(str1, str2));
 		assertFalse(Strings.isAnagram(str1, str4));
 		assertTrue(Strings.isAnagram(str1, str1));
+		assertTrue(Strings.isAnagram(str5, str6));
 	}
 
 }
