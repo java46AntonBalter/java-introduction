@@ -7,7 +7,7 @@ public class Strings {
 		for(int i = 0; i < str2.toCharArray().length; i++) {
 			if(str1.indexOf(str2.toCharArray()[i]) == i) {
 				++res[0];
-			} else if (str1.indexOf(str2.toCharArray()[i]) >= 0 && str1.indexOf(str2.toCharArray()[i]) != i ) {
+			} else if (str1.indexOf(str2.toCharArray()[i]) >= 0) {
 				++res[1];
 			}		
 		}
