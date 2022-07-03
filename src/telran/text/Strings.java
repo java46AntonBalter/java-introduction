@@ -16,7 +16,7 @@ public class Strings {
 
 	public static boolean isAnagram(String str1, String str2) {
 		if (str1.length() != str2.length()) return false; 
-		if (onlyLetters(str1, str2) == false) return false; 
+		if (!onlyLetters(str1, str2)) return false; 
 		int count[] = new int[26];
 		for (int i = 0; i < str1.length(); i++) {
 	        count[str1.toLowerCase().charAt(i) - 'a']++;
