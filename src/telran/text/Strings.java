@@ -36,6 +36,7 @@ public class Strings {
 			if (str1.charAt(i) < 65 || str2.charAt(i) < 65 
 					|| str1.charAt(i) > 122 || str2.charAt(i) > 122) {
 				check = false;
+				System.out.println("error: the string contains wrong symbols");
 			}
 		}
 		return check;
