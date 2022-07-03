@@ -18,8 +18,8 @@ public class Strings {
 		if (str1.length() != str2.length()) return false;
 		int count[] = new int[26];
 		for (int i = 0; i < str1.length(); i++) {
-	        count[str1.toLowerCase().charAt(i) - 97]++;
-	        count[str2.toLowerCase().charAt(i) - 97]--;
+	        count[str1.toLowerCase().charAt(i) - 'a']++;
+	        count[str2.toLowerCase().charAt(i) - 'a']--;
 	    }
 	    for (int i = 0; i < count.length; i++) {
 	        if (count[i] != 0) {
