@@ -1,6 +1,7 @@
 package telran.text;
 
 public class Strings {
+	//*****************************Task 1 **************************************
 	static public String matches(String name1, String name2) {
 		String[] name1SplitArray = name1.toLowerCase().split(" ");
 		String[] name2SplitArray = name2.toLowerCase().split(" ");
@@ -66,7 +67,7 @@ public class Strings {
 
 		return true;
 	}
-
+//**************************************Task 2****************************************
 	static public String[] sortStringsAsNumbers(String[] strNumbers) {
 		int[] helper = fillInHelper(strNumbers);
 		return fillInSortedNumbersAsStrings(helper, strNumbers);
