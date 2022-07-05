@@ -8,14 +8,14 @@ public class Strings {
 		int length2 = name2SplitArray.length;
 		if (length1 == 1 && length2 == 1 && name1SplitArray[0].compareTo(name2SplitArray[0]) == 0)
 			return "match";
-		int[] helper1 = new int[length1];
+		int[] helper1 = new int[length2];
 		int helperIndex = 0;
 		for (int i = 0; i < length1; i++) {
 			for (int j = 0; j < length2; j++) {
 				if (name1SplitArray[i].compareTo(name2SplitArray[j]) == 0 || (name1SplitArray[i].length() == 1
 						&& name1SplitArray[i].compareTo(name2SplitArray[j].substring(0, 1)) == 0)) {
 					helper1[helperIndex] = j;
-					helperIndex++;
+					helperIndex++;  
 				}
 			}
 		}
@@ -28,7 +28,6 @@ public class Strings {
 							|| (name1SplitArray[i].length() == 1
 									&& name1SplitArray[i].compareTo(name2SplitArray[j].substring(0, 1)) != 0)) {
 						helperContradiction++;
-
 					}
 				}
 				if (helperContradiction == length1)

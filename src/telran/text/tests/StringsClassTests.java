@@ -25,11 +25,11 @@ class StringsClassTests {
 		assertEquals("match", Strings.matches(str1, str2));
 		assertEquals("match", Strings.matches(str3, str5));
 		assertEquals("no match", Strings.matches(str4, str5));
-//		assertEquals("match", Strings.matches(str6, str7));
-//		assertEquals("match", Strings.matches(str6, str8));
-//		assertEquals("no match", Strings.matches(str6, str9));
-//		assertEquals("no match", Strings.matches(str6, str10));
-//		assertEquals("no match", Strings.matches(str6, str11));
+		assertEquals("match", Strings.matches(str6, str7));
+		assertEquals("match", Strings.matches(str6, str8));
+		assertEquals("no match", Strings.matches(str6, str9));
+		assertEquals("no match", Strings.matches(str6, str10));
+		assertEquals("no match", Strings.matches(str6, str11));
 	}
 	@Test
 	void sortStringsAsNumbersTest() {
