@@ -8,6 +8,21 @@ public class Strings {
 		int length2 = name2SplitArray.length;
 		if (length1 == 1 && length2 == 1 && name1SplitArray[0].compareTo(name2SplitArray[0]) == 0)
 			return "match";
+		
+		int[] helper = compareElements(name1SplitArray, name2SplitArray);
+		
+		if (checkContradiction(name1SplitArray, name2SplitArray) == true) return "no match";
+
+		if (isSorted(helper) == true) {
+			return "match";
+		} else {
+			return "no match";
+		}
+	}
+	
+	private static int[] compareElements(String[] name1SplitArray, String[] name2SplitArray) {
+		int length1 = name1SplitArray.length;
+		int length2 = name2SplitArray.length;		
 		int[] helper = new int[length2];
 		int helperIndex = 0;
 		for (int i = 0; i < length1; i++) {
@@ -17,9 +32,13 @@ public class Strings {
 					helper[helperIndex] = j;
 					helperIndex++;  
 				}
-			}
+			} 
 		}
-
+		return helper;
+	}
+	private static boolean checkContradiction(String[] name1SplitArray, String[] name2SplitArray) {
+		int length1 = name1SplitArray.length;
+		int length2 = name2SplitArray.length;
 		int helperContradiction = 0;
 		if (length1 == length2 && length1 > 1) {
 			for (int i = 0; i < length2; i++) {
@@ -31,17 +50,11 @@ public class Strings {
 					}
 				}
 				if (helperContradiction == length1)
-					return "no match";
+					return true;
 				helperContradiction = 0;
 			}
-
 		}
-
-		if (isSorted(helper) == true) {
-			return "match";
-		} else {
-			return "no match";
-		}
+		return false;
 	}
 
 	private static boolean isSorted(int[] a) {
