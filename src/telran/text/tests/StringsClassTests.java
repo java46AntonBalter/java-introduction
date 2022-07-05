@@ -21,7 +21,7 @@ class StringsClassTests {
 		String str9 = "Anna Maria Roberta";
 		String str10 = "Anna Magdalena Roberta";
 		String str11 = "Anna Magdalena Maria";
-		
+
 		assertEquals("match", Strings.matches(str1, str2));
 		assertEquals("match", Strings.matches(str3, str5));
 		assertEquals("no match", Strings.matches(str4, str5));
@@ -31,11 +31,13 @@ class StringsClassTests {
 		assertEquals("no match", Strings.matches(str6, str10));
 		assertEquals("no match", Strings.matches(str6, str11));
 	}
+
 	@Test
 	void sortStringsAsNumbersTest() {
 		String[] str1 = { "125", "7", "7", "7", "650", "321", "321", "1", "1", "0", "0", "999", "999", "977", "56",
 				"56" };
-		String[] expected = {"0", "0", "1", "1", "7", "7", "7", "56", "56", "125", "321", "321", "650", "977", "999", "999"};
+		String[] expected = { "0", "0", "1", "1", "7", "7", "7", "56", "56", "125", "321", "321", "650", "977", "999",
+				"999" };
 		Strings.sortStringsAsNumbers(str1);
 		assertArrayEquals(expected, str1);
 	}
