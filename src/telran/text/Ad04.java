@@ -20,21 +20,20 @@ public class Ad04 {
 				char check = buf.remove(buf.size() - 1);
 				switch (x) {
 				case ')':
-					if (check == '{' || check == '[')
-						return false;
+                    if (check == '{' || check == '[')
+					return false;
 					break;
 				case '}':
 					if (check == '(' || check == '[')
-						return false;
+					return false;
 					break;
 				case ']':
 					if (check == '{' || check == '(')
-						return false;
+					return false;
 					break;
 				}
 			}
 		}
 		return buf.isEmpty();
 	}
-
 }
