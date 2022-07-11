@@ -17,20 +17,17 @@ public class Ad04 {
 				if (buf.isEmpty()) {
 					return false;
 				}
-				char check;
+				char check = buf.remove(buf.size() - 1);
 				switch (x) {
 				case ')':
-					check = buf.remove(buf.size() - 1);
 					if (check == '{' || check == '[')
 						return false;
 					break;
 				case '}':
-					check = buf.remove(buf.size() - 1);
 					if (check == '(' || check == '[')
 						return false;
 					break;
 				case ']':
-					check = buf.remove(buf.size() - 1);
 					if (check == '{' || check == '(')
 						return false;
 					break;
